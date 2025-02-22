@@ -1,5 +1,5 @@
-FROM ubuntu:latest
-# FROM php:8.0.30-apache
+# FROM ubuntu:latest
+FROM php:8.0.30-apache
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/hello-cron
