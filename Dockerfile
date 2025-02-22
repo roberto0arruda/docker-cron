@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER docker@ekito.fr
+# FROM php:8.0.30-apache
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/hello-cron
@@ -11,9 +11,7 @@ RUN chmod 0644 /etc/cron.d/hello-cron
 RUN touch /var/log/cron.log
 
 #Install Cron
-RUN apt-get update
-RUN apt-get -y install cron
-
+RUN apt-get update && apt-get -y install cron
 
 # Run the command on container startup
 CMD cron && tail -f /var/log/cron.log
